@@ -5,14 +5,15 @@
     <uses-permission android:name="android.permission.BLUETOOTH_CONNECT" />
     <uses-permission android:name="android.permission.BLUETOOTH_SCAN" />
     <uses-permission android:name="android.permission.FOREGROUND_SERVICE" />
+    <uses-permission android:name="android.permission.REQUEST_IGNORE_BATTERY_OPTIMIZATIONS" />
 
-    <application android:label="Subaru Aha Server" android:theme="@style/Theme.AppCompat.Light">
+    <application android:label="Subaru Aha Server" android:theme="@style/Theme.SubaruAha">
         <activity android:name=".MainActivity" android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <service android:name=".AhaEmulatorService" android:exported="false" />
+        <service android:name=".AhaEmulatorService" android:exported="false" android:foregroundServiceType="connectedDevice" />
     </application>
 </manifest>
